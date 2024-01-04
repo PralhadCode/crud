@@ -1,0 +1,36 @@
+{% extends 'crud/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .form-layout {
+        border-radius: 15px;
+        width: 400px;
+    }
+</style>
+
+<body>
+    &nbsp; &nbsp;
+    <div class="container container-sm bg-secondary shadow-md p-5 form-layout">
+        <h3>Create Records</h3>
+
+        <h6>Start adding in the required details for your record.</h6>
+
+        <hr>
+        <br>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{forms|crispy}}
+            <br>
+            <button type="submit" class="btn btn-primary">Create account &nbsp; <i class="fa fa-check"
+                    aria-hidden="true"></i></button>
+            <a href="{% url 'dashboard' %}" class="btn btn-info">Return &nbsp; <i class="fa fa-arrow-left"
+                    aria-hidden="true"></i></a>
+        </form>
+    </div>
+</body>
+
+
+
+{% endblock %}
